@@ -1,0 +1,460 @@
+body {
+	margin: 0;
+	width: 100%;
+	background: #090909;
+}
+
+body > p {
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	color: white;
+	font-family: sans-serif;
+	font-size: 50px;
+	transform: translateX(-50%);
+}
+
+button:focus {
+	outline: none;
+}
+
+.load_save:hover {
+	background: #C04808;
+}
+
+.block,
+.lava {
+	display: none;
+}
+
+.name_block {
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	margin: 0;
+	color: white;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+.block > p,
+.lava > p {
+	position: relative;
+	color: white;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin: 0;
+	margin-top: 10px;
+	margin-left: 8px;
+	top: 35px;
+}
+
+.settings_block_lava_h {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	height: 20px;
+	border-radius: 5px;
+	border: 1px solid black;
+	background: #777777;
+	color: white;
+}
+
+.settings_block_lava_w {
+	position: absolute;
+	bottom: 35px;
+	right: 5px;
+	height: 20px;
+	border-radius: 5px;
+	border: 1px solid black;
+	background: #777777;
+	color: white;
+}
+
+.settings_block_h {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	height: 20px;
+	border-radius: 5px;
+	border: 1px solid black;
+	background: #777777;
+	color: white;
+}
+
+.settings_block_w {
+	position: absolute;
+	bottom: 35px;
+	right: 5px;
+	height: 20px;
+	border-radius: 5px;
+	border: 1px solid black;
+	background: #777777;
+	color: white;
+}
+
+.zone {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.creating {
+	position: absolute;
+	user-select: none;
+	top: 50%;
+	left: calc(50% - 30px);
+	transform: translate(-50%, -50%);
+	z-index: 30;
+	width: 860px;
+	height: 500px;
+	float: left;
+	background: #111111;
+}
+
+.play_create {
+	position: absolute;
+	right: 265px;
+	top: 5px;
+	bottom: -58px;
+	width: 150px;
+	height: 50px;
+	background: #68F06E;
+	border: 2px solid #69B751;
+	border-radius: 5px;
+	color: white;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 20px;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+	filter: drop-shadow(0px 0px 5px rgba(130, 255, 58, 0.5));
+	cursor: pointer;
+	transition: 0.3s ease;
+}
+
+.load_save {
+	position: absolute;
+	top: 65px;
+	right: 265px;
+	opacity: 1;
+	z-index: 20;
+	width: 200px;
+	padding-top: 4px;
+	text-align: center;
+	height: 40px;
+	background: #FF5900;
+	border: 2px solid #C04808;
+	border-radius: 5px;
+	color: white;
+	font-family: 'Press Start 2P', cursive;
+	filter: drop-shadow(0px 0px 5px rgba(255, 126, 58, 0.5));
+	transition: 0.3s ease;
+}
+
+.play_create:hover {
+	background: #69B751;
+}
+
+.menu_blocks {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 250px;
+	height: 100%;
+	background: #1c1c1c;
+	border-left: 1px solid white;
+	border-radius: 0px 20px 0px 0px;
+}
+
+.block_lava_check > *,
+.block_check > * {
+	position: absolute;
+}
+
+.block_lava_check > * {
+	background: rgba(255, 114, 0, 0.1);
+	box-shadow: 0px 0px 10px 0px rgba(255, 114, 0, 0.2);
+	border: 1px solid #FF7200;
+}
+
+.block_create,
+.block_lava_create,
+.block_remove {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 70px;
+	height: 70px;
+	float: left;
+	user-select: none;
+	cursor: pointer;
+	color: rgba(255, 255, 255, 0.4);
+	font-weight: bold;
+	font-family: sans-serif;
+}
+
+.block_create:hover,
+.block_lava_create:hover {
+	filter: brightness(70%);
+}
+
+.block_create {
+	z-index: 2;
+	top: 15px;
+	left: 15px;
+	background: #111111;
+	border: 1px solid white;
+}
+
+.block_lava_create {
+	z-index: 2;
+	top: 15px;
+	left: 105px;
+	border: 1px solid #FF7200;
+	background: rgba(255, 114, 0, 0.1);
+	box-shadow: 0px 0px 10px 0px rgba(255, 114, 0, 0.2);
+}
+
+.block_remove {
+	top: 15px;
+	left: 195px;
+	background: url('../IMG/razer.png');
+	background-size: cover;
+	filter: drop-shadow(0px 0px 5px black);
+	transition: 0.3s ease;
+}
+
+.menu {
+	position: relative;
+	top: -120px;
+	height: 120px;
+	width: 100%;
+	background: #252525;
+	border-radius: 20px 20px 0px 0px;
+}
+
+.game {
+	position: absolute;
+	overflow: hidden;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 1100px;
+	height: 500px;
+	background: #111111;
+	box-shadow: 0px 0px 40px 0px rgba(255, 255, 255, 0.05), inset 0px 0px 40px 0px rgba(0, 0, 0, 0.2);
+	border: 1px solid #060606;
+	border-bottom: 12px solid #060606;
+	border-left: 12px solid #060606;
+	border-radius: 50px;
+}
+
+.header {
+	position: absolute;
+	border-radius: 40px 0px 0px 40px;
+	z-index: 30;
+	left: 0;
+	height: 100%;
+	width: 90px;
+	background: #202020;
+}
+
+.footer {
+	position: absolute;
+	border-radius: 0px 40px 40px 0px;
+	z-index: 30;
+	right: 0;
+	height: 100%;
+	width: 150px;
+	background: #202020;
+}
+
+.circle {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 110px;
+	height: 110px;
+	border-radius: 50%;
+	background: #0A0A0A;
+	border-top: 5px solid rgba(174, 174, 174, 0.4);
+	border-right: 5px solid rgba(174, 174, 174, 0.4);
+}
+
+.shtorka {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 150px;
+	width: 15px;
+	background: #0C0C0C;
+	border-radius: 0px 10px 10px 0px;
+}
+
+.user	{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: calc(90px + 16px);
+	top: 50%;
+	background: transparent;
+	border: 2px solid #ECECEC;
+	border-radius: 5px;
+	transform: translateY(-50%);
+}
+
+.vrag {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	right: calc(150px + 16px);
+	top: calc(50% - 100px);
+	background: transparent;
+	border: 2px solid red;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px 0px rgba(255, 0, 0, 0.5);
+	transform: translateY(-50%);
+}
+
+.vrag:hover {
+	background: red;
+	border: 1px solid #111111;
+}
+
+.HP {
+	position: absolute;
+	top: calc(50% - 300px);
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 200px;
+	height: 50px;
+	background: red;
+	border-radius: 10px;
+	border: 5px solid #272727;
+}
+
+.lvl {
+	position: absolute;
+	right: calc(150px + 8px);
+	top: 8px;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	opacity: 0.7;
+}
+
+.gameOver {
+	position: absolute;
+	z-index: 20;
+	left: 90px;
+	width: calc(100% - 90px - 150px);
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	display: none;
+}
+
+.gameOver > a > .restart {
+	position: absolute;
+	left: 50%;
+	top: calc(50% + 60px);
+	transform: translateX(-50%);
+	width: 250px;
+	height: 100px;
+	background: #68F06E;
+	border: 4px solid #69B751;
+	border-radius: 20px;
+	color: white;
+	font-weight: bold;
+	font-size: 40px;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+	cursor: pointer;
+	transition: 0.3s ease;
+}
+
+.gameOver > a > .restart:hover {
+	background: #69B751;
+}
+
+.gameOver > p {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: calc(50% - 150px);
+	left: 50%;
+	font-family: sans-serif;
+	transform: translateX(-50%);
+	font-weight: bold;
+	color: white;
+	font-size: 80px;
+}
+
+.exit,
+.exit_ {
+	position: absolute;
+	border-radius: 5px 0px 0px 5px;
+	user-select: none;
+	right: 150px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50px
+;	height: 50px;
+	color: #252525;
+	font-family: sans-serif;
+	font-weight: bold;
+	text-align: center;
+	line-height: 50px;
+	background: white;
+}
+
+.creating > .exit_ {
+	right: 0px;
+}
+
+.health {
+	position: absolute;
+	left: -5px;
+	top: 0;
+	width: 210px;
+	height: 50px;
+	border-radius: 5px;
+	background: #52FF5A;
+}
+
+.health > p {
+	position: relative;
+	left: -70px;
+	top: -40px;
+	color: white;
+	font-family: 'Fredoka One', cursive;
+	font-weight: bold;
+	font-size: 40px;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.blocks > * {
+	position: absolute;
+}
+
+.blocks_lava > * {
+	position: absolute;
+}
+
+.blocks > .block_1,
+.blocks > .block_2,
+.blocks > .block_3,
+.blocks > .block_4 {
+	background: transparent;
+	border: 1px solid #ECECEC;
+}
+
+.blocks_lava > .block_1,
+.blocks_lava > .block_2,
+.blocks_lava > .block_3,
+.blocks_lava > .block_4 {
+	background: rgba(255, 114, 0, 0.1);
+	box-shadow: 0px 0px 10px 0px rgba(255, 114, 0, 0.2);
+	border: 1px solid #FF7200;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My game JS</title>
+	<link rel="stylesheet" href="CSS/mine.css">
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="HP">
+		<div class="health">
+			<p>HP: </p>
+		</div>
+	</div>
+	</div>
+	<div class="game">
+		<div class="creating">
+			<div class="exit_">
+				EXIT
+			</div>
+			<div class="zone"></div>
+			<div class="menu">
+				<div class="load_save" onclick="last_save()">Последний уровень</div>
+				<div class="menu_blocks">
+					<button class="blocks" onclick="on_block()">blocks</button>
+					<button class="blocks_lava" onclick="on_block_lava()">lava</button>
+					<p class="name_block">NAME</p>
+					<div class="block">
+						<p>Width</p>
+						<p>Height</p>
+						<input type="text" class="settings_block_h" value="70">
+						<input type="text" class="settings_block_w" value="70">
+					</div>
+					<div class="lava">
+						<p>Width</p>
+						<p>Height</p>
+						<input type="text" class="settings_block_lava_h" value="70">
+						<input type="text" class="settings_block_lava_w" value="70">
+					</div>
+				</div>
+				<div class="block_create">
+					block
+				</div>
+				<div class="block_lava_create">
+					lava
+				</div>
+				<div class="block_remove" onclick="razer()"></div>
+				<div class="blocks_check"></div>
+				<div class="blocks_lava_check"></div>
+				<button class="play_create" onclick="start_test()">Играть</button>
+			</div>
+		</div>
+		<div class="lvl">
+			CUSTOM LVL
+		</div>
+		<div class="gameOver">
+			<p>GAME OVER</p>
+			<a href=""><button class="restart">RESTART</button></a>
+		</div>
+		<div class="header">
+			<div class="shtorka"></div>
+		</div>
+		<div class="user"></div>
+		<div class="vrag"></div>
+		<div class="blocks"></div>
+		<div class="blocks_lava"></div>
+		<div class="exit">
+			EXIT
+		</div>
+		<div class="footer">
+			<div class="circle"></div>
+		</div>
+	</div>
+
+	<script src="JS/create_lvl.js"></script>
+	<script src="JS/mine.js"></script>
+</body>
+</html>
