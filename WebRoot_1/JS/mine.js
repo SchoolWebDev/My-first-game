@@ -52,7 +52,7 @@ function move_player() {
 	else {
 		document.querySelector('.game').style.overflow = 'hidden';
 	}
-	if (document.querySelector('.creating').style.display != 'block' && player_this == 'game' && player_this != 'lose' && player_this != 'win') {
+	if (document.querySelector('.creating').style.display != 'block' && player_this == 'game' && player_this != 'lose' && player_this != 'win' && document.querySelector('.official_lvl').style.display != 'block') {
 		if (posY > vrag.offsetTop) {
 			vrag.style.top = vrag.offsetTop + vrag_speed / 2 + 'px';
 		}
@@ -170,16 +170,6 @@ function razer() {
 	}
 	else {
 		document.querySelector('.block_remove').style.filter = 'drop-shadow(black 0px 0px 5px)';
-		for (var i = 0; i < blocks_play_test.length; i++) {
-			var block_cursor = document.querySelectorAll('.blocks_check');
-			blocks_play_test[i].onmouseover = null;
-			block_cursor[i].style.cursor = '';
-		}
-		for (var i = 0; i < blocks_lava_play_test.length; i++) {
-			var block_cursor_lava = document.querySelectorAll('.blocks_lava_check');
-			blocks_lava_play_test[i].onmouseover = null;
-			block_cursor_lava[i].style.cursor = '';
-		}
 	}
 }
 let blocks_play_test = document.querySelectorAll('.blocks_check > *');
@@ -188,14 +178,6 @@ setTimeout(function() {
 	blocks_play_test = document.querySelectorAll('.blocks_check > *');
 	blocks_lava_play_test = document.querySelectorAll('.blocks_lava_check > *');
 	for (var i = 0; i < blocks_play_test.length; i++) {
-		if (document.querySelector('.block_remove').style.filter == 'drop-shadow(rgba(0, 255, 0, 0.4) 0px 0px 10px)') {
-			blocks_play_test[i].onmouseover = function() {
-				var fashj = document.querySelectorAll('.blocks_check');
-				for (var i = 0; i < fashj.length; i++) {
-					fashj[i].style.cursor = 'pointer';
-				}
-			}
-		}
 		blocks_play_test[i].onclick = function() {
 			if (document.querySelector('.block_remove').style.filter == 'drop-shadow(rgba(0, 255, 0, 0.4) 0px 0px 10px)') {
 				this.remove();
@@ -203,14 +185,6 @@ setTimeout(function() {
 		}
 	}
 	for (var i = 0; i < blocks_lava_play_test.length; i++) {
-		if (document.querySelector('.block_remove').style.filter == 'drop-shadow(rgba(0, 255, 0, 0.4) 0px 0px 10px)') {
-			blocks_lava_play_test[i].onmouseover = function() {
-				var fashj = document.querySelectorAll('.blocks_lava_check');
-				for (var i = 0; i < fashj.length; i++) {
-					fashj[i].style.cursor = 'pointer';
-				}
-			}
-		}
 		blocks_lava_play_test[i].onclick = function() {
 			if (document.querySelector('.block_remove').style.filter == 'drop-shadow(rgba(0, 255, 0, 0.4) 0px 0px 10px)') {
 				this.remove();
@@ -231,11 +205,11 @@ function start_test() {
 	 	$(`.blocks_lava > .block_${i + 1}`).remove();
 	}
 	for (var i = 0; i < blocks_play_test.length; i++) {
-		blocks_play_test[i].style.top = blocks_play_test[i].offsetTop - 100 + 'px';
+		blocks_play_test[i].style.top = blocks_play_test[i].offsetTop - 120 + 'px';
 		blocks_play_test[i].style.left = blocks_play_test[i].offsetLeft + 90 + 'px';
 	}
 	for (var i = 0; i < blocks_lava_play_test.length; i++) {
-		blocks_lava_play_test[i].style.top = blocks_lava_play_test[i].offsetTop - 100 + 'px';
+		blocks_lava_play_test[i].style.top = blocks_lava_play_test[i].offsetTop - 120 + 'px';
 		blocks_lava_play_test[i].style.left = blocks_lava_play_test[i].offsetLeft + 90 + 'px';
 	}
 	var blocks_for_outer = document.querySelectorAll(`.blocks_check > *`);
@@ -254,7 +228,6 @@ function start_test() {
 	Y = [];
 	bWidth = [];
 	bHeight = [];
-
 	blocks_lavaX = document.querySelectorAll('.blocks_lava > *');
 	blocks_lavaY = document.querySelectorAll('.blocks_lava > *');
 	blocks_lavaHeight = document.querySelectorAll('.blocks_lava > *');
@@ -355,6 +328,4 @@ document.onkeyup = function() {
 }
 
 // 1. Сделать оф уровни! |ЕЩЕ НЕ СДЕЛАЛ|
-// 2. Сделать сохранение кастомных уровней!!! |ЧАСТИЧНО СДЕЛАЛ|
-
-// Тоесть смотри
+// 2. Сделать сохранение кастомных уровней!!! |ПОСЛЕДНИЙ СОХРАНЯЕТСЯ|
